@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lista de Exercícios Site Google</title>
+</head>
+<body>
+	<h1>Conversor de metros para centímetros</h1>	
+		Digite a quantidade em metros: <input type="text" id="txtmetros">metros
+		<p></p>
+		<button onclick="convertecentimetros()">Converter!</button>
+		<p id="result"></p>
+		<p></p>
+	<h1>Conversor de centímetros para polegadas</h1>
+		Digite a quantidade em centímetros: <input type="text" id="txtpolegadas">cm
+		<p></p>
+		<button onclick="convertepolegadas()">Converter!</button>
+		<p id="resultpolegadas"></p>
+		<p></p>
+	<h1>Calcular área de um círculo</h1>
+		Digite o raio do círculo: <input type="text" id="txtraio">
+		<p></p>
+		<button onclick="calcularaio()">Calcular!</button>
+		<p id="resultraio"></p>
+		<p></p>
+	<h1>Converter Fahreinheit para Celsius</h1>
+		Digite a temperatura em Fahrenheit: <input type="text" id="fh">
+		<p></p>
+		<button onclick="temperatura()">Converter!</button>
+		<p id="resulttemp"></p>
+	<h1>Converter Celsius para Fahrenheit</h1>
+		Digite a temperatura em Celsius: <input type="text" id="txtcelsius">
+		<p></p>
+		<button onclick="convertecelsius()">Converter!</button>
+		<p id="resultfh"></p>
+	<h1>Gasolina Vs. Alcool</h1>
+		Digite o valor da GASOLINA: <input type="text" id="txtgasolina">
+		<p></p>
+		Digite o valor do ALCOOL: <input type="text" id="txtalcool">
+		<p></p>
+		<button onclick="combustiveis()">Calcular!</button>
+		<p id="comb"></p>
+	<script type="text/javascript">
+		var metros;
+		var resultado;
+		var polegadas;
+		var raio;
+		var temperatura;
+		var celsius;
+		var gasolina;
+		var alcool;
+
+		function convertecentimetros()
+		{
+			metros = document.getElementById('txtmetros').value;
+			resultado = metros * 100;
+			document.getElementById('result').innerHTML = (metros+' metros corresponde a '+resultado+' centímetros.');
+		}
+		function convertepolegadas()
+		{
+			polegadas = document.getElementById('txtpolegadas').value;
+			resultado = polegadas * 0.393700787;
+			document.getElementById('resultpolegadas').innerHTML = (polegadas+' centímetros corresponde a '+resultado+' polegadas.');
+		}
+		function calcularaio()
+		{
+			raio = document.getElementById('txtraio').value;
+			resultado = 3.14159265359 * (raio * raio);
+			document.getElementById('resultraio').innerHTML = ('A área do círculo é: '+resultado);
+		}
+		function temperatura()
+		{
+			temperatura = document.getElementById('fh').value;
+			resultado = (5 * (temperatura - 32) /9);
+			document.getElementById('resulttemp').innerHTML = (temperatura+' fahrenheit corresponde a '+resultado+'ºC.')
+		}
+		function convertecelsius()
+		{
+			celsius = document.getElementById('txtcelsius').value;
+			resultado = celsius * 1.8 + 32;
+			document.getElementById('resultfh').innerHTML = (celsius+'ºC corresponde a '+resultado+'ºF.');
+		}
+		function combustiveis()
+		{
+			gasolina = document.getElementById('txtgasolina').value;
+			alcool = document.getElementById('txtalcool').value;
+			resultado = gasolina * 0.7;
+			if (resultado < alcool)
+			{
+				document.getElementById('comb').innerHTML = ('Abasteça com GASOLINA!');
+			}
+			else
+			{
+				document.getElementById('comb').innerHTML = ('Abasteça com ALCOOL!');
+			}
+		}
+
+	</script>
+</body>
+</html>
